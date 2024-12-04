@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:gravity="center">
+
+¡    <TextView
+        android:id="@+id/projectNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Project Name"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:paddingBottom="5dp" />
+
+¡    <TextView
+        android:id="@+id/projectDescriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Project Description"
+        android:textSize="12sp"
+        android:textColor="@android:color/darker_gray"
+        android:gravity="center" />
+</LinearLayout>
