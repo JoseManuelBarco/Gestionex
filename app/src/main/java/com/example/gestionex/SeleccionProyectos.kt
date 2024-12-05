@@ -17,14 +17,15 @@ class SeleccionProyectos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.seleccionproyectos)
 
-
-
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
-        val gridLayoutManager = GridLayoutManager(this, 2)
+        val gridLayoutManager = GridLayoutManager(this, 1)
         recyclerView.layoutManager = gridLayoutManager
 
-        val adapter = ProjectoRecyclerView(proyectoslist) { _ ->
-            val intent = Intent(this, SeleccionTareas::class.java)
+        loadJsonFromAssets()
+
+        val adapter = ProjectoRecyclerView(proyectoslist) { proyecto ->
+            val intent = Intent(this, SeleccioTareas::class.java)
+            intent.putExtra("PROYECTO_ID", proyecto.proyectoID)
             startActivity(intent)
         }
 
@@ -36,6 +37,8 @@ class SeleccionProyectos : AppCompatActivity() {
         val jsonText = bufferedReader.use { it.readText() }
 
         val gson = Gson()
-        val proyectoslist = object : TypeToken<List<Projectos>>() {}.type
+        val projectobject = object : TypeToken<List<Projectos>>() {}.type
+        proyectoslist = gson.fromJson(jsonText, projectobject)
     }
+
 }

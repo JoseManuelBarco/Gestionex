@@ -1,1 +1,103 @@
-null
+[
+  {
+    "proyectoID": "1",
+    "nombreProyecto": "Project 135",
+    "descripcionProyecto": "Description of Project 1",
+    "tareas": [
+      {
+        "nombreTarea": "Task 1",
+        "personaAsignada": "a",
+        "estado": "In Progress",
+        "fechaInicio": "01/11/2024",
+        "fechaFin": "10/11/2024",
+        "subtareas": [
+          {
+            "nombreSubtarea": "Subtask 1.1",
+            "personaAsignada": "John Doe",
+            "estado": "Completed",
+            "fechaInicio": "01/11/2024",
+            "fechaFin": "02/11/2024"
+          },
+          {
+            "nombreSubtarea": "Subtask 1.2",
+            "personaAsignada": "Jane Smith",
+            "estado": "Pending",
+            "fechaInicio": "2024-11-03",
+            "fechaFin": "2024-11-05"
+          },
+          {
+            "nombreSubtarea": "asd",
+            "personaAsignada": "asd",
+            "estado": "as",
+            "fechaInicio": "04/12/2024",
+            "fechaFin": "04/12/2024"
+          }
+        ]
+      },
+      {
+        "nombreTarea": "Task 2",
+        "personaAsignada": "Jane Smith",
+        "estado": "Not Started",
+        "fechaInicio": "2024-11-11",
+        "fechaFin": "2024-11-20",
+        "subtareas": [
+          {
+            "nombreSubtarea": "Subtask 2.1",
+            "personaAsignada": "Jane Smith",
+            "estado": "Not Started",
+            "fechaInicio": "2024-11-11",
+            "fechaFin": "2024-11-15"
+          },
+          {
+            "nombreSubtarea": "2.2",
+            "personaAsignada": "asd",
+            "estado": "In Progess",
+            "fechaInicio": "03/12/2024",
+            "fechaFin": "03/12/2024"
+          }
+        ]
+      },
+      {
+        "nombreTarea": "asd",
+        "personaAsignada": "asd",
+        "estado": "In Progess",
+        "fechaInicio": "04/12/2024",
+        "fechaFin": "04/12/2024",
+        "subtareas": []
+      }
+    ]
+  },
+  {
+    "proyectoID": "2",
+    "nombreProyecto": "Project 2",
+    "descripcionProyecto": "Description of Project 2",
+    "tareas": [
+      {
+        "nombreTarea": "Task 1",
+        "personaAsignada": "Alice Johnson",
+        "estado": "Completed",
+        "fechaInicio": "2024-10-01",
+        "fechaFin": "2024-10-10",
+        "subtareas": []
+      }
+    ]
+  },
+  {
+    "proyectoID": "3",
+    "nombreProyecto": "asd",
+    "descripcionProyecto": "asd",
+    "tareas": []
+  },
+  {
+    "proyectoID": "4",
+    "nombreProyecto": "asd",
+    "descripcionProyecto": "asd",
+    "tareas": []
+  },
+  {
+    "proyectoID": "5",
+    "nombreProyecto": "asd",
+    "descripcionProyecto": "asd",
+    "tareas": []
+  }
+]
