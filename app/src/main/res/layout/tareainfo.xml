@@ -1,0 +1,98 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+
+    <EditText
+        android:id="@+id/editNombreTarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="148dp"
+        android:hint="Nombre de Tarea"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/editFechaInicio"
+        android:layout_width="188dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="36dp"
+        android:hint="Fecha Inicio"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerEstado" />
+
+    <TextView
+        android:id="@+id/editFechaFin"
+        android:layout_width="183dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="36dp"
+        android:hint="Fecha Fin"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/subtarea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/editFechaInicio"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerEstado"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/spinnerEstado"
+        android:layout_width="378dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="288dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="7dp" />
+
+    <TextView
+        android:id="@+id/subtarea"
+        android:layout_width="381dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="40dp"
+        android:hint="Subtarea: 0"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editFechaInicio" />
+
+    <TextView
+        android:id="@+id/editPersonaAsignada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:hint="Persona Asignada"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerEstado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editNombreTarea" />
+
+    <Button
+        android:id="@+id/btnSave2"
+        android:layout_width="172dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="144dp"
+        android:text="Descartar cambios"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="176dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="144dp"
+        android:text="Guardar cambios"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSave2"
+        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
