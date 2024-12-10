@@ -11,10 +11,10 @@
 
     <TextView
         android:id="@+id/projectNameText"
-        android:layout_width="155dp"
-        android:layout_height="45dp"
+        android:layout_width="138dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:gravity="center"
         android:paddingBottom="5dp"
         android:text="Project Name"
@@ -26,28 +26,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+
         android:id="@+id/projectDescriptionText"
-        android:layout_width="157dp"
-        android:layout_height="98dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="24dp"
+        android:layout_width="115dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="44dp"
         android:gravity="center"
         android:text="Project Description"
         android:textColor="@android:color/darker_gray"
         android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/piechart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/projectNameText" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/piechart"
 
-        android:layout_width="195dp"
-        android:layout_height="177dp"
+        android:layout_width="186dp"
+        android:layout_height="148dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.636" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

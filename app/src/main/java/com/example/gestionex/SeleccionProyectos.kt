@@ -30,6 +30,9 @@ class SeleccionProyectos : AppCompatActivity() {
         }
 
         recyclerView.adapter = adapter
+
+        recyclerView.addItemDecoration(BorderItemDecoration(this))
+
     }
 
     private fun loadJsonFromAssets() {
