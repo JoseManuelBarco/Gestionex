@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="144dp"
         android:hint="Nombre de Tarea"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,6 @@
         android:layout_marginTop="36dp"
         android:hint="Fecha Fin"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/subtarea"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/editFechaInicio"
@@ -52,14 +51,13 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="7dp" />
 
-    <TextView
-        android:id="@+id/subtarea"
-        android:layout_width="381dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="40dp"
-        android:hint="Subtarea: 0"
-        android:textSize="16sp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSubtareas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editFechaInicio" />
 
@@ -79,7 +77,7 @@
         android:layout_width="172dp"
         android:layout_height="44dp"
         android:layout_marginEnd="4dp"
-        android:layout_marginBottom="144dp"
+        android:layout_marginBottom="40dp"
         android:text="Descartar cambios"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -88,11 +86,11 @@
         android:id="@+id/btnSave"
         android:layout_width="176dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="144dp"
+        android:layout_marginBottom="36dp"
         android:text="Guardar cambios"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnSave2"
-        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
