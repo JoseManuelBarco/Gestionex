@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="8dp"
-    android:gravity="center">
+    android:gravity="center"
+    >
 
 
     <TextView
@@ -18,8 +19,8 @@
         android:gravity="center"
         android:paddingBottom="5dp"
         android:text="Project Name"
-        android:textColor="@android:color/black"
         android:textSize="16sp"
+
         app:layout_constraintEnd_toStartOf="@+id/piechart"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +34,6 @@
         android:layout_marginTop="44dp"
         android:gravity="center"
         android:text="Project Description"
-        android:textColor="@android:color/darker_gray"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.082"
@@ -42,7 +42,6 @@
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/piechart"
-
         android:layout_width="186dp"
         android:layout_height="148dp"
         android:layout_marginEnd="8dp"

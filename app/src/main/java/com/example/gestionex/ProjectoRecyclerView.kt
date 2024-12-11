@@ -49,7 +49,7 @@ class ProjectoRecyclerView  ( val proyectos: List<Projectos>,
                 PieEntry(count.toFloat(), estado)
             }
             val pieDataSet = PieDataSet(entries, "Task States").apply {
-                colors = ColorTemplate.MATERIAL_COLORS.toList() // Use predefined colors
+                colors = ColorTemplate.MATERIAL_COLORS.toList()
                 valueTextSize=14f
             }
 

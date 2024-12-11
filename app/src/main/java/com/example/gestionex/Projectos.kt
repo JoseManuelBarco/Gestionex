@@ -6,5 +6,5 @@ class Projectos( val proyectoID: String,
                  val nombreProyecto: String,
                  val descripcionProyecto: String,
                  val tareas: List<Tarea>,
-                 val dataEntries: List<PieEntry>) {
+              ) {
 }
