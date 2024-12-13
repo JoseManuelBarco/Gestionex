@@ -1,6 +1,7 @@
 package com.example.gestionex
 
-class Tarea(var nombreTarea: String,
+class Tarea(var tareaid: String,
+            var nombreTarea: String,
             var personaAsignada: String,
             var estado: String,
             var fechaInicio: String,

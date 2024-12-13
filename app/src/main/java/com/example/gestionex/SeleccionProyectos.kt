@@ -8,9 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.BufferedReader
+import java.io.File
 
 class SeleccionProyectos : AppCompatActivity() {
-    private lateinit var proyectoslist : List<Projectos>
+    private lateinit var proyectoslist: List<Projectos>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +21,7 @@ class SeleccionProyectos : AppCompatActivity() {
         val gridLayoutManager = GridLayoutManager(this, 1)
         recyclerView.layoutManager = gridLayoutManager
 
-        loadJsonFromAssets()
+        loadJsonFromInternalStorage()
 
         val adapter = ProjectoRecyclerView(proyectoslist) { proyecto ->
             val intent = Intent(this, SeleccioTareas::class.java)
@@ -34,14 +35,17 @@ class SeleccionProyectos : AppCompatActivity() {
 
     }
 
-    private fun loadJsonFromAssets() {
-        val inputStream = this.assets.open("proyectos.json")
-        val bufferedReader = BufferedReader(inputStream.reader())
-        val jsonText = bufferedReader.use { it.readText() }
-
-        val gson = Gson()
-        val projectobject = object : TypeToken<List<Projectos>>() {}.type
-        proyectoslist = gson.fromJson(jsonText, projectobject)
+    private fun loadJsonFromInternalStorage() {
+        val fileName = "proyectos.json"
+        val file = File(filesDir, fileName)
+        try {
+            val jsonText = file.bufferedReader().use { it.readText() }
+            val gson = Gson()
+            val projectObjectType = object : TypeToken<List<Projectos>>() {}.type
+            proyectoslist = gson.fromJson(jsonText, projectObjectType)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            proyectoslist = emptyList()
+        }
     }
-
 }

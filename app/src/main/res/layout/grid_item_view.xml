@@ -7,6 +7,8 @@
     android:orientation="vertical"
     android:padding="8dp"
     android:gravity="center"
+    android:background="@drawable/disenogridview"
+    android:layout_marginBottom="25dp"
     >
 
 
@@ -20,7 +22,7 @@
         android:paddingBottom="5dp"
         android:text="Project Name"
         android:textSize="16sp"
-
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/piechart"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +37,7 @@
         android:gravity="center"
         android:text="Project Description"
         android:textSize="12sp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.082"
         app:layout_constraintStart_toStartOf="parent"

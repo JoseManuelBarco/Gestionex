@@ -15,6 +15,8 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.BufferedReader
 import java.io.ByteArrayOutputStream
+import java.io.File
+import java.io.FileOutputStream
 import javax.crypto.Cipher
 import javax.crypto.CipherOutputStream
 import javax.crypto.spec.IvParameterSpec
@@ -27,8 +29,15 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.loginlayout)
+        copyJsonUsersToInternalStorage()
+        copyJsonProyectsToInternalStorage()
+        window.decorView.systemUiVisibility = (
+                        View.SYSTEM_UI_FLAG_FULLSCREEN      // Hides the status bar
+                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // Hides the navigation bar
+                        or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
 
-        val loginButton = findViewById<Button>(R.id.loginButton)
+
+                        val loginButton = findViewById<Button>(R.id.loginButton)
         val usernameEditText = findViewById<EditText>(R.id.UsernameLogin)
         val passwordEditText = findViewById<EditText>(R.id.PasswordLogin)
         val errorTextView = findViewById<TextView>(R.id.errorTextView)
@@ -49,15 +58,24 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
-    private fun createUserList(){
-        val inputStream = this.assets.open("usuarios.json")
-        val bufferedReader = BufferedReader(inputStream.reader())
-        val jsonText = bufferedReader.use { it.readText() }
+    private fun createUserList() {
+        val fileName = "usuarios.json"
+        val file = File(filesDir, fileName)
 
-        val gson = Gson()
-        val userObjects = object : TypeToken<List<User>>() {}.type
+        if (file.exists()) {
+            try {
+                val jsonText = file.bufferedReader().use { it.readText() }
 
-        userList = gson.fromJson(jsonText, userObjects)
+                val gson = Gson()
+                val userObjects = object : TypeToken<List<User>>() {}.type
+
+                userList = gson.fromJson(jsonText, userObjects)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        } else {
+            userList = emptyList()
+        }
     }
 
     private fun validateLogin(email: String, password: String): Boolean {
@@ -86,5 +104,44 @@ class LoginActivity : AppCompatActivity() {
             return Base64.encodeToString(outputStream.toByteArray(), Base64.DEFAULT).trim() // Encode to Base64
         }
         }
+
+    private fun copyJsonUsersToInternalStorage() {
+        val fileName = "usuarios.json"
+        val file = File(filesDir, fileName)
+
+        if (!file.exists()) {
+            try {
+                val inputStream = assets.open(fileName)
+                val outputStream = FileOutputStream(file)
+                inputStream.use { input ->
+                    outputStream.use { output ->
+                        input.copyTo(output)
+                    }
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
+    }
+    private fun copyJsonProyectsToInternalStorage() {
+        val fileName = "proyectos.json"
+        val file = File(filesDir, fileName)
+
+        if (!file.exists()) {
+            try {
+                val inputStream = assets.open(fileName)
+                val outputStream = FileOutputStream(file)
+                inputStream.use { input ->
+                    outputStream.use { output ->
+                        input.copyTo(output)
+                    }
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
+
+
+}
 

@@ -5,6 +5,7 @@
     "descripcionProyecto": "Description of Project 1",
     "tareas": [
       {
+        "tareaid": "1",
         "nombreTarea": "Task 1",
         "personaAsignada": "a",
         "estado": "In Progress",
@@ -35,6 +36,7 @@
         ]
       },
       {
+        "tareaid": "2",
         "nombreTarea": "Task 2",
         "personaAsignada": "Jane Smith",
         "estado": "Not Started",
@@ -58,6 +60,7 @@
         ]
       },
       {
+        "tareaid": "3",
         "nombreTarea": "asd",
         "personaAsignada": "asd",
         "estado": "In Progess",
@@ -73,6 +76,7 @@
     "descripcionProyecto": "Description of Project 2",
     "tareas": [
       {
+        "tareaid": "1",
         "nombreTarea": "Task 1",
         "personaAsignada": "Alice Johnson",
         "estado": "Completed",
