@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/loginbackground">
@@ -12,8 +13,9 @@
         android:layout_height="40dp"
         android:layout_marginEnd="84dp"
         android:layout_marginBottom="444dp"
-        android:hint="Username"
-        android:background="@color/white"
+        android:hint="@string/emailtextbox"
+        android:gravity="center"
+        android:background="@drawable/backgroundtext"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -23,9 +25,10 @@
         android:layout_height="47dp"
         android:layout_marginEnd="92dp"
         android:layout_marginBottom="340dp"
-        android:background="@color/white"
-
-        android:hint="Password"
+        android:gravity="center"
+        android:background="@drawable/backgroundtext"
+        android:hint="@string/passwordtextbox"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -35,7 +38,7 @@
         android:layout_height="43dp"
         android:layout_marginEnd="108dp"
         android:layout_marginBottom="212dp"
-        android:text="Login"
+        android:text="@string/loginbutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -43,6 +46,7 @@
         android:id="@+id/errorTextView"
         android:layout_width="202dp"
         android:layout_height="94dp"
+        android:text="@string/wrongpasswdtextbox"
         android:textColor="@android:color/holo_red_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,4 +55,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.863" />
 
+    <ImageView
+        android:id="@+id/passwordToggle"
+        android:layout_width="46dp"
+        android:layout_height="47dp"
+        android:src="@drawable/hidepasswd"
+        app:layout_constraintBottom_toBottomOf="@+id/PasswordLogin"
+        app:layout_constraintEnd_toEndOf="@+id/PasswordLogin"
+        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintStart_toStartOf="@+id/PasswordLogin"
+        app:layout_constraintTop_toTopOf="@+id/PasswordLogin"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,18 +2,17 @@ package com.example.gestionex
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.util.Base64
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import java.io.BufferedReader
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -32,16 +31,29 @@ class LoginActivity : AppCompatActivity() {
         copyJsonUsersToInternalStorage()
         copyJsonProyectsToInternalStorage()
         window.decorView.systemUiVisibility = (
-                        View.SYSTEM_UI_FLAG_FULLSCREEN      // Hides the status bar
-                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // Hides the navigation bar
+                        View.SYSTEM_UI_FLAG_FULLSCREEN
+                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
 
-
-                        val loginButton = findViewById<Button>(R.id.loginButton)
+        val loginButton = findViewById<Button>(R.id.loginButton)
         val usernameEditText = findViewById<EditText>(R.id.UsernameLogin)
         val passwordEditText = findViewById<EditText>(R.id.PasswordLogin)
         val errorTextView = findViewById<TextView>(R.id.errorTextView)
+        val passwordToggle = findViewById<ImageView>(R.id.passwordToggle)
 
+        var isPasswordVisible = false
+        passwordToggle.setOnClickListener {
+            isPasswordVisible = !isPasswordVisible
+            if (isPasswordVisible) {
+                passwordEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_NORMAL
+                passwordToggle.setImageResource(R.drawable.showpasswd)
+            } else {
+                passwordEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                passwordToggle.setImageResource(R.drawable.hidepasswd)
+            }
+
+            passwordEditText.setSelection(passwordEditText.text.length)
+        }
         createUserList()
         loginButton.setOnClickListener {
             val email = usernameEditText.text.toString().trim()
@@ -52,7 +64,6 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(Intent(this, SeleccionProyectos::class.java)) // Replace with your target activity
                 finish()
             } else {
-                errorTextView.text = "Invalid username or password"
                 errorTextView.visibility = View.VISIBLE
             }
         }
@@ -141,7 +152,5 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-
-
 }
 

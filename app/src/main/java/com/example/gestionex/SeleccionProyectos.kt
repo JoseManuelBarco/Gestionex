@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import java.io.BufferedReader
 import java.io.File
 
 class SeleccionProyectos : AppCompatActivity() {
@@ -26,12 +25,11 @@ class SeleccionProyectos : AppCompatActivity() {
         val adapter = ProjectoRecyclerView(proyectoslist) { proyecto ->
             val intent = Intent(this, SeleccioTareas::class.java)
             intent.putExtra("PROYECTO_ID", proyecto.proyectoID)
+            intent.putExtra("projectName", proyecto.nombreProyecto)
             startActivity(intent)
         }
 
         recyclerView.adapter = adapter
-
-        recyclerView.addItemDecoration(BorderItemDecoration(this))
 
     }
 

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Gestionex</string>
+    <string name="emailtextbox">emailtextbox</string>
+    <string name="passwordtextbox">passwordtextbox\n</string>
+    <string name="loginbutton">loginbutton\n</string>
+    <string name="wrongpasswdtextbox">wrongpasswdtextbox</string>
+    <string name="tasktitletextbox">teasktitletextbox\n</string>
+    <string name="assignedguytextbox">assignedguytextbox\n</string>
+    <string name="estatustextbox">estatustextbox\n</string>
+    <string name="subtaskcounttextbox">subtaskcounttextbox\n</string>
 </resources>
