@@ -3,7 +3,6 @@ package com.example.gestionex
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
-import android.util.Base64
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -13,13 +12,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import java.io.ByteArrayOutputStream
+import org.mindrot.jbcrypt.BCrypt
 import java.io.File
 import java.io.FileOutputStream
-import javax.crypto.Cipher
-import javax.crypto.CipherOutputStream
-import javax.crypto.spec.IvParameterSpec
-import javax.crypto.spec.SecretKeySpec
+
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var userList : List<User>
@@ -56,18 +52,30 @@ class LoginActivity : AppCompatActivity() {
         }
         createUserList()
         loginButton.setOnClickListener {
+
+            var i = 0
+            var check = false
+
             val email = usernameEditText.text.toString().trim()
             val password = passwordEditText.text.toString().trim()
 
-            if (validateLogin(email, password)) {
-                errorTextView.visibility = View.GONE
-                startActivity(Intent(this, SeleccionProyectos::class.java)) // Replace with your target activity
-                finish()
-            } else {
-                errorTextView.visibility = View.VISIBLE
-            }
+            do {
+                if (userList[i].Correo == usernameEditText.text.toString() && BCrypt.checkpw(passwordEditText.text.toString(), userList[i].Contrasenya)) {
+                    check = true
+                    errorTextView.visibility = View.INVISIBLE
+                    val intent = Intent(this, SeleccionProyectos::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    errorTextView.visibility = View.VISIBLE
+                    errorTextView.text = "CONTRASENYA I/O EMAIL INCORRECTES"
+                }
+                i++
+                if (i == userList.size) {
+                    check = true
+                }
+            } while (!check)
         }
-
     }
     private fun createUserList() {
         val fileName = "usuarios.json"
@@ -88,34 +96,6 @@ class LoginActivity : AppCompatActivity() {
             userList = emptyList()
         }
     }
-
-    private fun validateLogin(email: String, password: String): Boolean {
-        val encryptedInputPassword = AESUtils.encrypt(password)
-        return userList.any { user ->
-            user.Correo == email && user.Contrasenya == encryptedInputPassword
-        }
-    }
-    object AESUtils {
-        private const val SECRET_KEY = "1234567890123456"
-        private const val IV = "6543210987654321"
-
-        fun encrypt(input: String): String {
-            require(SECRET_KEY.toByteArray().size == 16) { "Secret key must be 16 bytes long" }
-            require(IV.toByteArray().size == 16) { "IV must be 16 bytes long" }
-
-            val keySpec = SecretKeySpec(SECRET_KEY.toByteArray(Charsets.UTF_8), "AES")
-            val ivSpec = IvParameterSpec(IV.toByteArray(Charsets.UTF_8))
-            val cipher = Cipher.getInstance("AES/CBC/PKCS5Padding")
-            cipher.init(Cipher.ENCRYPT_MODE, keySpec, ivSpec)
-
-            val outputStream = ByteArrayOutputStream()
-            CipherOutputStream(outputStream, cipher).use { cipherStream ->
-                cipherStream.write(input.toByteArray(Charsets.UTF_8)) // Encrypt input
-            }
-            return Base64.encodeToString(outputStream.toByteArray(), Base64.DEFAULT).trim() // Encode to Base64
-        }
-        }
-
     private fun copyJsonUsersToInternalStorage() {
         val fileName = "usuarios.json"
         val file = File(filesDir, fileName)

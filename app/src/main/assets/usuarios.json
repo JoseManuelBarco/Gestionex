@@ -1,16 +1,16 @@
 [
   {
-    "Nombre": "Jose Manuel ",
-    "Apellido1": "Barco",
-    "Apellido2": "",
-    "Correo": "jbarco@gmail.com",
-    "Contrasenya": "yk9XD94KOLYNS66kLFm42A=="
+    "Nombre": "Eric",
+    "Contrasenya": "$2a$11$T5Zn.PQGH4AP/6NQBxYeYuYoiqLMnvDmC2uOosiHqAJGFoZ6vBJR.",
+    "Apellido1": "Peralta",
+    "Apellido2": "Sandoval",
+    "Correo": "eperalta@gmail.com"
   },
   {
-    "Nombre": "Eric",
-    "Apellido1": "Peralta",
+    "Nombre": "Yago",
+    "Contrasenya": "$2a$11$ukrfJKqTbkkmZ1ZnEpUP2eU0UvvP7QF2nXGMCv5oueXWht24WoSdO",
+    "Apellido1": "Jodar",
     "Apellido2": "",
-    "Correo": "eperalta@gmail.com",
-    "Contrasenya": "ntVAY0x+kVSm7YO2E6L+Dw=="
+    "Correo": "yjodar@gmail.com"
   }
 ]
