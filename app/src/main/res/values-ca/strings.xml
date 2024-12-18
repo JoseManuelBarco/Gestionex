@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Gestionex</string>
+    <string name="emailtextbox">"Correu "</string>
+    <string name="passwordtextbox">Contrasenya</string>
+    <string name="loginbutton">Login</string>
+    <string name="wrongpasswdtextbox">Contasenya o correu incorrectes</string>
+    <string name="tasktitletextbox">Tasca</string>
+    <string name="assignedguytextbox">Persona asignada</string>
+    <string name="estatustextbox">Estat</string>
+    <string name="subtaskcounttextbox">Subtasques</string>
+</resources>

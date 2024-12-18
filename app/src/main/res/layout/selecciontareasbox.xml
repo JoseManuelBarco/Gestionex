@@ -1,0 +1,102 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/disenogridview"
+    android:padding="16dp"
+    android:layout_marginBottom="25dp">
+
+
+    <TextView
+        android:id="@+id/personaassignada"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Persona Assignada"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/personaassignadatitulo" />
+
+    <TextView
+        android:id="@+id/tareanombre"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="Nombre Tarea"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulotarea" />
+
+    <TextView
+        android:id="@+id/estadotarea"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:gravity="center"
+        android:text="Estado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/estadotitle" />
+
+    <TextView
+        android:id="@+id/numerotareas"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="88dp"
+        android:gravity="center"
+        android:text="Numero Tareas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtareastitle" />
+
+    <TextView
+        android:id="@+id/titulotarea"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/tasktitletextbox"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/personaassignadatitulo"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/white"
+        android:text="@string/assignedguytextbox"
+        app:layout_constraintStart_toEndOf="@+id/titulotarea"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/estadotitle"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/estatustextbox"
+        app:layout_constraintStart_toEndOf="@+id/subtareastitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subtareastitle"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="76dp"
+        android:text="@string/subtaskcounttextbox"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/personaassignadatitulo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
