@@ -54,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
-        class = "com.example.gestionex.TareaInfo">
+       >
     </androidx.fragment.app.FragmentContainerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

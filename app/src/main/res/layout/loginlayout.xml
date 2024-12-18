@@ -7,26 +7,50 @@
     android:background="@drawable/loginbackground">
 
     <EditText
-        android:id="@+id/UsernameLogin"
+        android:id="@+id/JSONpasswordLogin"
+        android:layout_width="243dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="268dp"
+        android:background="@drawable/backgroundtext"
+        android:gravity="center"
+        android:hint="@string/passwordtextbox"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:id="@+id/JSONpasswordToggle"
+        android:layout_width="46dp"
+        android:layout_height="47dp"
+        android:src="@drawable/hidepasswd"
+        app:layout_constraintBottom_toBottomOf="@+id/JSONpasswordLogin"
+        app:layout_constraintEnd_toEndOf="@+id/JSONpasswordLogin"
+        app:layout_constraintHorizontal_bias="0.964"
+        app:layout_constraintStart_toStartOf="@+id/JSONpasswordLogin"
+        app:layout_constraintTop_toTopOf="@+id/JSONpasswordLogin" />
+
+    <EditText
+        android:id="@+id/UsernameLogin"
         android:layout_width="252dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginBottom="444dp"
-        android:hint="@string/emailtextbox"
-        android:gravity="center"
+        android:layout_marginBottom="436dp"
         android:background="@drawable/backgroundtext"
+        android:gravity="center"
+        android:hint="@string/emailtextbox"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/PasswordLogin"
         android:layout_width="243dp"
         android:layout_height="47dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="340dp"
-        android:gravity="center"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="352dp"
         android:background="@drawable/backgroundtext"
+        android:gravity="center"
         android:hint="@string/passwordtextbox"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,8 +60,8 @@
         android:id="@+id/loginButton"
         android:layout_width="195dp"
         android:layout_height="43dp"
-        android:layout_marginEnd="108dp"
-        android:layout_marginBottom="212dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="164dp"
         android:text="@string/loginbutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -50,10 +74,10 @@
         android:textColor="@android:color/holo_red_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.863" />
+        app:layout_constraintVertical_bias="0.915" />
 
     <ImageView
         android:id="@+id/passwordToggle"
@@ -62,7 +86,7 @@
         android:src="@drawable/hidepasswd"
         app:layout_constraintBottom_toBottomOf="@+id/PasswordLogin"
         app:layout_constraintEnd_toEndOf="@+id/PasswordLogin"
-        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintHorizontal_bias="0.964"
         app:layout_constraintStart_toStartOf="@+id/PasswordLogin"
         app:layout_constraintTop_toTopOf="@+id/PasswordLogin"
         app:layout_constraintVertical_bias="0.0" />
